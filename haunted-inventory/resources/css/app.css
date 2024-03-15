@@ -1,0 +1,10 @@
+@font-face { font-family: JuneBug; src: url('HelpMe.ttf'); }
+
+body {
+    padding: 50px;
+    font: 20px JuneBug, Helvetica, Arial, sans-serif;
+    background-color:black;
+    color:white;
+  
+  
+  }
