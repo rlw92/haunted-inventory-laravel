@@ -22,8 +22,7 @@
         <title>Haunted Inventory</title>
 </head>
 <body>
-
 {{$slot}}
-
+      
 </body>
 </html>
