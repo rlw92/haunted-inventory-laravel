@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//normal one
+/*
 Route::get('/', function () {
     return view('home');
 });
+*/
+Route::get('/', [ItemsController::class, 'index']);
+
+Route::get('/items/create', [ItemsController::class, 'create'])->middleware(['auth', 'verified']);
+Route::post('/items', [ItemsController::class, 'store'])->middleware(['auth', 'verified']);
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -28,4 +40,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+/*
+Route::resource('items', ItemsController::class)
+    ->only(['create', 'store'])
+    ->middleware(['auth', 'verified'])
+    ;
+*/
 require __DIR__.'/auth.php';
