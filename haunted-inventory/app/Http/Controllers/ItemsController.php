@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\items;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response; 
-use Illuminate\View\View;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\RedirectResponse;
 
 class ItemsController extends Controller
@@ -61,14 +62,26 @@ class ItemsController extends Controller
     public function edit(items $items)
     {
         //
+        return view("items.edit", ['items' => $items]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, items $items)
+    public function update(Request $request, items $items): RedirectResponse
     {
-        //
+        //has to own the post to edit it
+        if($items->user_id != auth()->id()) {abort(403, 'Unauthorized Action');}
+
+       // Gate::authorize('update', $items);
+ 
+        $validated = $request->validate([
+            'message' => 'required|string|max:255',
+        ]);
+ 
+        $items->update($validated);
+ 
+        return redirect('/');
     }
 
     /**
@@ -76,6 +89,12 @@ class ItemsController extends Controller
      */
     public function destroy(items $items)
     {
+        if($listing->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
         //
+        $items->delete();
+ 
+        return redirect('/');
     }
 }

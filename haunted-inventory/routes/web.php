@@ -26,6 +26,9 @@ Route::get('/', [ItemsController::class, 'index']);
 
 Route::get('/items/create', [ItemsController::class, 'create'])->middleware(['auth', 'verified']);
 Route::post('/items', [ItemsController::class, 'store'])->middleware(['auth', 'verified']);
+Route::get('/items/{items}/edit', [ItemsController::class, 'edit'])->middleware(['auth', 'verified']);
+Route::put('/items/{items}', [ItemsController::class, 'update'])->middleware(['auth', 'verified']);
+Route::delete('/items/{items}/delete', [ItemsController::class, 'destroy'])->middleware(['auth', 'verified']);
 
 
 
