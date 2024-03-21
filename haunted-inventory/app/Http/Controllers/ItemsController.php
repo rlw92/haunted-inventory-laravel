@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\items;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use App\Notifications\Newitem;
 use Illuminate\Http\Response; 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Notification;
 
 class ItemsController extends Controller
 {
@@ -38,12 +41,18 @@ class ItemsController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        //
+        //dd($request->user()->id);
+       
         $validated = $request->validate([
             'message' => 'required|string|max:255',
         ]);
  
         $request->user()->items()->create($validated);
+
+        //Notification Event
+        foreach (User::whereNot('id', $request->user()->id)->cursor() as $user){
+            Notification::send($user, new Newitem());
+        }
  
         return redirect('/');
     }
@@ -89,7 +98,7 @@ class ItemsController extends Controller
      */
     public function destroy(items $items)
     {
-        if($listing->user_id != auth()->id()) {
+        if($items->user_id != auth()->id()) {
             abort(403, 'Unauthorized Action');
         }
         //

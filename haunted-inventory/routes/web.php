@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,15 @@ Route::get('/items/{items}/edit', [ItemsController::class, 'edit'])->middleware(
 Route::put('/items/{items}', [ItemsController::class, 'update'])->middleware(['auth', 'verified']);
 Route::delete('/items/{items}/delete', [ItemsController::class, 'destroy'])->middleware(['auth', 'verified']);
 
-
+//comment out below email to stop email verification
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+ 
+    return redirect('/home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
 
 
 Route::get('/dashboard', function () {
