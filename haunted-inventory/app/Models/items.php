@@ -24,6 +24,8 @@ class items extends Model
     }
 
     protected $fillable = [
+        'title',
         'message',
+        'logo'
     ];
 }

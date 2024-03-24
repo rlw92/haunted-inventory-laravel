@@ -13,3 +13,21 @@ body {
   
   
   }
+
+  .container{display:grid;
+   grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
+   /* grid-template-columns: autofit autofit autofit;  */   
+   justify-content: center;
+      gap:20px;
+      padding:10px;
+    }
+
+    .item{background-color: white;
+          border:solid rgb(182, 22, 22) 2px;
+          display:flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+    .item a{display: block;
+            }

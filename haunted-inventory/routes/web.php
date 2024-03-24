@@ -26,6 +26,11 @@ Route::get('/', function () {
 Route::get('/', [ItemsController::class, 'index']);
 
 Route::get('/items/create', [ItemsController::class, 'create'])->middleware(['auth', 'verified']);
+
+//get individual item page
+Route::get('/items/{items}', [ItemsController::class, 'show']);
+
+
 Route::post('/items', [ItemsController::class, 'store'])->middleware(['auth', 'verified']);
 Route::get('/items/{items}/edit', [ItemsController::class, 'edit'])->middleware(['auth', 'verified']);
 Route::put('/items/{items}', [ItemsController::class, 'update'])->middleware(['auth', 'verified']);

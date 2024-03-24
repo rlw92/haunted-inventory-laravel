@@ -42,18 +42,27 @@ class ItemsController extends Controller
     public function store(Request $request): RedirectResponse
     {
         //dd($request->user()->id);
+        //dd($request->file('logo')->store('logos', 'public'));
        
         $validated = $request->validate([
+            'title'=> 'required|string|max:30',
             'message' => 'required|string|max:255',
+            
         ]);
+
+       if($request->hasFile('logo')) {
+            $validated['logo'] = $request->file('logo')->store('logos', 'public');
+            };
  
         $request->user()->items()->create($validated);
 
-        //Notification Event
+        //Notification Event   uncomment to use 
+        /*
         foreach (User::whereNot('id', $request->user()->id)->cursor() as $user){
             Notification::send($user, new Newitem());
         }
- 
+        */
+
         return redirect('/');
     }
 
@@ -62,6 +71,8 @@ class ItemsController extends Controller
      */
     public function show(items $items)
     {
+
+        return view('items.singleItem',['items'=> $items]);
         //
     }
 

@@ -4,7 +4,9 @@
         <form method="POST" action="/items/{{$items->id}}">
             @csrf
             @method('PUT')
-            <textarea
+
+            <!-- Name -->
+                    <textarea
                 name="message"
                 class="text-red-900 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
             >{{ old('message', $items->message) }}</textarea>
