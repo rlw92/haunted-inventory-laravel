@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\items;
+use App\Models\Comment;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Notifications\Newitem;
@@ -72,7 +73,10 @@ class ItemsController extends Controller
     public function show(items $items)
     {
 
-        return view('items.singleItem',['items'=> $items]);
+        
+        $comments = Comment::where('items_id', $items->id)->orderBy('created_at', 'desc')->get();
+               
+        return view('items.singleItem',['items'=> $items, 'comments' => $comments]);
         //
     }
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -29,6 +30,10 @@ Route::get('/items/create', [ItemsController::class, 'create'])->middleware(['au
 
 //get individual item page
 Route::get('/items/{items}', [ItemsController::class, 'show']);
+
+//post comment
+
+Route::post('/items/{items}/comment', [CommentController::class, 'store']);
 
 
 Route::post('/items', [ItemsController::class, 'store'])->middleware(['auth', 'verified']);
