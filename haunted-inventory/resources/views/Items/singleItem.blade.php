@@ -11,6 +11,7 @@ src="{{$items->logo ? asset('storage/' . $items->logo) : asset('/images/no-image
 alt=""
 />
 </div>
+<x-average-star-rating :rating="$rating"/>
 
 <x-comment-form :items="$items"/>
 <h3 class="text-center">Comment Section</h3>

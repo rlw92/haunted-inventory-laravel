@@ -100,3 +100,7 @@ body {
               color: #f3f0f0;
               text-shadow: 0 0 5px rgb(11, 187, 49);
             }
+
+            .checked {
+              color: orange;
+            }
