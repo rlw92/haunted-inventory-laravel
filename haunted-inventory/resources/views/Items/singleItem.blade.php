@@ -22,4 +22,49 @@ alt=""
 </div>
 @endforeach
 
+<div class="text-center">
+<h2>Rate this story</h2>
+
+<div>
+<form class="rating" method="POST" action="/items/{{$items->id}}/rating">
+    @csrf
+  <label>
+    <input type="radio" name="stars" value="1" />
+    <span class="icon">★</span>
+  </label>
+  <label>
+    <input type="radio" name="stars" value="2" />
+    <span class="icon">★</span>
+    <span class="icon">★</span>
+  </label>
+  <label>
+    <input type="radio" name="stars" value="3" />
+    <span class="icon">★</span>
+    <span class="icon">★</span>
+    <span class="icon">★</span>   
+  </label>
+  <label>
+    <input type="radio" name="stars" value="4" />
+    <span class="icon">★</span>
+    <span class="icon">★</span>
+    <span class="icon">★</span>
+    <span class="icon">★</span>
+  </label>
+  <label>
+    <input type="radio" name="stars" value="5" />
+    <span class="icon">★</span>
+    <span class="icon">★</span>
+    <span class="icon">★</span>
+    <span class="icon">★</span>
+    <span class="icon">★</span>
+  </label>
+</div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+  
+</form>
+</div>
+
+
 </x-layout>
