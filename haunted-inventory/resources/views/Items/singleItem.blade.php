@@ -13,6 +13,8 @@ alt=""
 </div>
 <x-average-star-rating :rating="$rating"/>
 
+@auth
+
 <x-comment-form :items="$items"/>
 <h3 class="text-center">Comment Section</h3>
 @foreach($comments as $comment)
@@ -40,20 +42,20 @@ alt=""
     <span class="icon">★</span>
   </label>
   <label>
-    <input type="radio" name="stars" value="3" />
+    <input type="radio" name="stars" checked value="3" />
     <span class="icon">★</span>
     <span class="icon">★</span>
     <span class="icon">★</span>   
   </label>
   <label>
-    <input type="radio" name="stars" value="4" />
+    <input type="radio" name="stars"  value="4" />
     <span class="icon">★</span>
     <span class="icon">★</span>
     <span class="icon">★</span>
     <span class="icon">★</span>
   </label>
   <label>
-    <input type="radio" name="stars" value="5" />
+    <input type="radio" name="stars"  value="5" />
     <span class="icon">★</span>
     <span class="icon">★</span>
     <span class="icon">★</span>
@@ -71,5 +73,6 @@ alt=""
 <p class="text-center">You have already rated this story</p>
 <x-userRating :rating="$userRating"/>
 @endif
+@endauth
 
 </x-layout>
