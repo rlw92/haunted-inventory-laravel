@@ -14,8 +14,8 @@ alt=""
 <x-average-star-rating :rating="$rating"/>
 
 @auth
-
 <x-comment-form :items="$items"/>
+@endauth
 <h3 class="text-center">Comment Section</h3>
 @foreach($comments as $comment)
 <div class="border-4 border-red-900">
@@ -23,18 +23,20 @@ alt=""
     <p>By User Id:{{$comment->user_id}}</p>
     <p>Created at {{$comment->created_at}}</p>
 
+    @auth
     @if($comment->user_id === auth()->user()->id)
     <form method="POST" action="/items/{{$items->id}}/{{$comment->id}}/delete">
          @csrf
          @method('delete')
        <button class="text-red-900">Delete</button>
-                                              
+    @endauth                                    
               </form>
     @endif
 
 </div>
 @endforeach
 
+@auth
 @if($showform != true)
 <div class="text-center">
 <h2>Rate this story</h2>
