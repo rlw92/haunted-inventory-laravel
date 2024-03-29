@@ -34,6 +34,8 @@ Route::get('/items/{items}', [ItemsController::class, 'show']);
 
 //post comment
 Route::post('/items/{items}/comment', [CommentController::class, 'store']);
+// delete comment
+Route::delete('/items/{items}/{comment}/delete', [CommentController::class, 'destroy'])->middleware(['auth', 'verified']);
 //post rating
 Route::post('/items/{items}/rating', [RatingController::class, 'store']);
 

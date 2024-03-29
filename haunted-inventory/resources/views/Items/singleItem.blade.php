@@ -22,6 +22,16 @@ alt=""
     <p>{{$comment->message}}</p>
     <p>By User Id:{{$comment->user_id}}</p>
     <p>Created at {{$comment->created_at}}</p>
+
+    @if($comment->user_id === auth()->user()->id)
+    <form method="POST" action="/items/{{$items->id}}/{{$comment->id}}/delete">
+         @csrf
+         @method('delete')
+       <button class="text-red-900">Delete</button>
+                                              
+              </form>
+    @endif
+
 </div>
 @endforeach
 

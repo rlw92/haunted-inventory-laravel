@@ -74,8 +74,15 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Comment $comment)
+    public function destroy(items $items,Comment $comment): RedirectResponse
     {
+        if($comment->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+        //
+        $comment->delete();
+ 
+        return redirect()->back();
         //
     }
 }
