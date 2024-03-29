@@ -30,6 +30,10 @@ class RatingController extends Controller
      */
     public function store(Request $request, items $items): RedirectResponse
        {
+
+        if(Rating::where('items_id', $items->id)->where("user_id", auth()->user()->id)->count()>0){
+            abort(403, 'unauthorised actoin. You have already rated this story.');
+        }
           
         
         $validated['user_id'] = auth()->id();

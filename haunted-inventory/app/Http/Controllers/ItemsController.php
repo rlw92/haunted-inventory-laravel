@@ -73,14 +73,18 @@ class ItemsController extends Controller
      */
     public function show(items $items)
     {
-
+        //dd(auth()->user()->id);
+    
         //average star rating
         $avgStar = Rating::where('items_id', $items->id)->avg('stars');
-           
+        //dont show the rating form if user has already rated
+        $ratingmatch = Rating::where('items_id', $items->id)->where("user_id", auth()->user()->id)->count()>0;
+        //users rating if they have already rated
+        $userRating = Rating::where('items_id', $items->id)->where("user_id", auth()->user()->id)->first()->stars;
         //grab the comments  
         $comments = Comment::where('items_id', $items->id)->orderBy('created_at', 'desc')->get();
                
-        return view('items.singleItem',['items'=> $items, 'comments' => $comments, 'rating'=> $avgStar]);
+        return view('items.singleItem',['userRating'=>$userRating, 'items'=> $items, 'comments' => $comments, 'rating'=> $avgStar, "showform" => $ratingmatch]);
         //
     }
 

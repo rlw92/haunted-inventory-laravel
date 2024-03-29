@@ -23,6 +23,7 @@ alt=""
 </div>
 @endforeach
 
+@if($showform != true)
 <div class="text-center">
 <h2>Rate this story</h2>
 
@@ -66,6 +67,9 @@ alt=""
   
 </form>
 </div>
-
+@else
+<p class="text-center">You have already rated this story</p>
+<x-userRating :rating="$userRating"/>
+@endif
 
 </x-layout>
