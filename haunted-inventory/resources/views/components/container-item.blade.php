@@ -1,7 +1,7 @@
 
-
-<div class="item  text-center ">       
-    <a href="/items/{{$chirp['id']}}" class='hover:bg-red-400'>       
+<a href="/items/{{$chirp['id']}}" > 
+<div class="item">       
+          
  <p class="mt-4 text-lg text-gray-900">{{ $chirp->user->name }}</p>
       <p class="mt-4 text-lg text-gray-900">{{ $chirp->created_at->format('j M Y, g:i a') }}</p>
       <p class="mt-4 text-lg text-gray-900 cursor-pointer">{{ $chirp->title }}</p> 
@@ -20,6 +20,6 @@
                                    
               @endif
                         
-      </a>
+      
         </div>
- 
+ </a>

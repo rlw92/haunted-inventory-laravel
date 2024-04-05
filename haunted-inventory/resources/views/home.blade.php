@@ -7,11 +7,11 @@
         @endauth
     </div>
     <div class="container">
+        <div class="content">
             @foreach($items as $chirp)
             <x-container-item :chirp="$chirp"/>
-                
             @endforeach
-        </div>
+</div>
     </div>
     
 </x-layout>
