@@ -1,17 +1,25 @@
 <x-layout>
     <x-header></x-header>
+    
     <h1 class="text-center text-4xl underline decoration-orange-900">Haunted Inventory</h1>
-    <div class="text-center hover:bg-red-700">
-        @auth
-        <button><a href="/items/create">Post Item</a></button>
-        @endauth
-    </div>
+    
+            <div class="text-center">Filter Options</div>
     <div class="container">
-        <div class="content">
+            <div class="content">
             @foreach($items as $chirp)
             <x-container-item :chirp="$chirp"/>
             @endforeach
+            {{ $items->links() }} 
+            @auth
+
+      <a href="/items/create">  <div class="text-center p-8 hover:bg-red-700">
+        <button>Post Item</button>
+        </div></a>
+        @endauth
 </div>
+
+
     </div>
+    
     
 </x-layout>
