@@ -14,7 +14,8 @@
 
       <a href="/items/create">  <div class="post">
         <button>Post Item</button>
-        </div></a>
+        </div>
+    </a>
         @endauth
 </div>
 

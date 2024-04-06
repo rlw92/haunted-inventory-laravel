@@ -27,10 +27,10 @@ body {
 
     .item{background-color: white;
           border:solid rgb(182, 22, 22) 2px;
-          display:flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
           gap:10px;
           height:70vh;
         }
@@ -56,6 +56,13 @@ body {
 
     
   .content a{color: black;}
+
+  .imgresponsive{
+   
+    max-width: 100%;
+    height: 100%;
+    
+  }
   
 
     /*For Mobiles*/
