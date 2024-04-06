@@ -12,7 +12,7 @@
             {{ $items->links() }} 
             @auth
 
-      <a href="/items/create">  <div class="text-center p-8 hover:bg-red-700">
+      <a href="/items/create">  <div class="post">
         <button>Post Item</button>
         </div></a>
         @endauth
