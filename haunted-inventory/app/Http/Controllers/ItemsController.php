@@ -24,7 +24,7 @@ class ItemsController extends Controller
         
         return view('home', [
            
-           'items' => items::latest()->paginate(3)
+           'items' => items::latest()->paginate(6)
 
         ]);
     }

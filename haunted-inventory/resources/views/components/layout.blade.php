@@ -21,8 +21,11 @@
         </script>
         <title>Haunted Inventory</title>
 </head>
-<body>
+<body class="p-0">
+
+<div class="grid grid-rows-3 grid-cols-6 gap-0 w-full">
 {{$slot}}
-      
+        </div>
+        
 </body>
 </html>

@@ -14,16 +14,9 @@ body {
   
   }
 
-  .container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 25vh 25vh 25vh 25vh;
-    
-   /* grid-template-columns: autofit autofit autofit;  */   
-   justify-content: center;
-      gap:20px;
-      padding:10px;
-    }
+  
+
+
 
     .item{
       background-image:linear-gradient(#7c0200,rgba(240, 50, 25, 0.692));
