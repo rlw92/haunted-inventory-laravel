@@ -13,10 +13,7 @@
            @endforeach
            {{ $items->links() }} 
 
-           <a href="/items/create">  <div class="post">
-        <button>Post Item</button>
-        </div>
-    </a>
+           
 </div>
 </div>
 

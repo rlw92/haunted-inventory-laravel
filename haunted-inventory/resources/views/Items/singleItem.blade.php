@@ -1,7 +1,7 @@
 <x-layout>
 <x-header></x-header>
 
-<div class="flex items-center flex-col border-2 border-indigo-600">
+<div class="flex items-center flex-col border-2 border-indigo-600 p-2">
 <p>{{$items->title}}</p>
 <p>{{$items->message}}</p>
 <p>{{ $items->user->name }}</p>
