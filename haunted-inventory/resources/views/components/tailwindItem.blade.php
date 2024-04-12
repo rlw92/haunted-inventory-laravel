@@ -7,8 +7,10 @@
      alt="Cinque Terre" 
      class="w-full h-auto">
   </a>
-  <div class="">{{ $chirp->user->name }}</div>
-  <div class="">{{ $chirp->message }}</div>
+  <div class="">By {{ $chirp->user->name }}</div>
+  <div class="">{{ substr($chirp->message,0,30) }}
+    <a class="hover:text-green-900" href="/items/{{$chirp['id']}}">... Read More</a>
+  </div>
   <div>{{ $chirp->created_at->format('j M Y, g:i a') }}</div>
   <div class="">Star Rating</div>
 </div>
