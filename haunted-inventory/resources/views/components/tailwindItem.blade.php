@@ -8,7 +8,7 @@
      class="w-full h-auto">
   </a>
   <div class="">{{ $chirp->user->name }}</div>
-  <div class="">Short example of the post cutoff</div>
+  <div class="">{{ $chirp->message }}</div>
   <div>{{ $chirp->created_at->format('j M Y, g:i a') }}</div>
   <div class="">Star Rating</div>
 </div>

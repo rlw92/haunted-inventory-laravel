@@ -1,5 +1,10 @@
 <x-layout>
-<x-header></x-header>
+
+<div class="row-start-1 col-span-6 row-span-3 
+    flex flex-col gap-6 p-6 
+    lg:col-span-6 lg:row-start-1 lg:row-span-3 lg:items-center border-b-2 border-orange-900">
+<x-tailwindHeader></x-tailwindHeader>
+
 
 <div class="flex items-center flex-col border-2 border-indigo-600 p-2">
 <p>{{$items->title}}</p>
@@ -86,5 +91,7 @@ alt=""
 <x-userRating :rating="$userRating"/>
 @endif
 @endauth
+
+</div>
 
 </x-layout>

@@ -24,7 +24,10 @@
 <body class="p-0">
 
 <div class="grid grid-rows-3 grid-cols-6 gap-0 w-full">
+<x-tailwindLeftbar></x-tailwindLeftbar>
+    <x-tailwindbottomBar></x-tailwindbottomBar>
 {{$slot}}
+<x-tailwindRightbar></x-tailwindRightbar>
         </div>
         
 </body>

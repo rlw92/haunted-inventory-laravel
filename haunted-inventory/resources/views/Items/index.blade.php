@@ -1,5 +1,8 @@
 <x-layout>
-<x-header></x-header>
+<div class="row-start-1 col-span-6 row-span-3 
+    flex flex-col gap-6 p-6 
+    lg:col-span-6 lg:row-start-1 lg:row-span-3 lg:items-center border-b-2 border-orange-900">
+<x-tailwindHeader></x-tailwindHeader>
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
         Post the story of your haunted item!
         <form method="POST" action="/items" enctype="multipart/form-data">
@@ -34,5 +37,6 @@
                         <x-primary-button class="mt-4">Post Item</x-primary-button>
         </form>
     
+</div>
 </div>
 </x-layout>
