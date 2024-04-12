@@ -1,7 +1,7 @@
 
 <div class=" flex flex-col items-center border-b-2 
             border-orange-900">
-    <h3 class="text-center">{{ $chirp->title }}</h3>
+    <h3 class="text-center"><a class="hover:text-green-900" href="/items/{{$chirp['id']}}">{{ $chirp->title }}</a></h3>
   <a href="/items/{{$chirp['id']}}">
     <img src="{{$chirp->logo ? asset('storage/' . $chirp->logo) : asset('/images/no-image.jpg')}}"
      alt="Cinque Terre" 
