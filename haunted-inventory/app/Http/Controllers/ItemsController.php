@@ -25,7 +25,7 @@ class ItemsController extends Controller
         return view('home', [
            
            'items' => items::latest()->paginate(6),
-           'rating' => Rating::latest()
+           
            
 
         ]);

@@ -12,6 +12,8 @@
     <a class="hover:text-green-900" href="/items/{{$chirp['id']}}">... Read More</a>
   </div>
   <div>{{ $chirp->created_at->format('j M Y, g:i a') }}</div>
-  <div class="">Star Rating</div>
+  <div class="">
+  <x-average-star-rating :rating="$chirp->averageRating()"/>
+  </div>
 </div>
 

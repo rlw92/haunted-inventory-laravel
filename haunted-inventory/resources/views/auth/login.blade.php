@@ -1,5 +1,5 @@
 <x-layout>
-    <x-header></x-header>
+    <x-tailwindHeader></x-tailwindHeader>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
