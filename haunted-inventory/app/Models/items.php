@@ -28,6 +28,13 @@ class items extends Model
                 ->orWhereRelation('user','name', 'like', '%' . request('search') . '%');
                 
         }
+
+        if($filters['filters'] ?? false) {
+            if(request('filters')=='oldest'){
+                $query->reorder('id','asc');
+            }
+                
+        }
     }
 
     
