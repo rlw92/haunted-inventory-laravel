@@ -19,6 +19,19 @@ class items extends Model
         'created' => itemCreated::class,
     ];
 
+
+    
+    public function scopeFilter($query, array $filters){
+                if($filters['search'] ?? false) {
+            $query->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('message', 'like', '%' . request('search') . '%')
+                ->orWhereRelation('user','name', 'like', '%' . request('search') . '%');
+                
+        }
+    }
+
+    
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
