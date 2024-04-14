@@ -14,4 +14,6 @@ class Rating extends Model
         'items_id',
         'stars'
     ];
+
+
 }

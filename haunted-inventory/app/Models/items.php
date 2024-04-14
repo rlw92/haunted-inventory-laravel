@@ -33,6 +33,14 @@ class items extends Model
             if(request('filters')=='oldest'){
                 $query->reorder('id','asc');
             }
+            if(request('filters')=='highestRated'){
+                //Below shows how to dig into individual items//
+               // dd($query->get()[4]->averageRating());
+
+               
+
+
+            }
                 
         }
     }
@@ -49,6 +57,7 @@ class items extends Model
         return $this->hasMany(Comment::class);
     }
 
+    
     public function averageRating()
     {
         return round(Rating::where('items_id', $this->id)->avg('stars'));
