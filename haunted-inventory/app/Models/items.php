@@ -35,11 +35,9 @@ class items extends Model
             }
             if(request('filters')=='highestRated'){
                 //Below shows how to dig into individual items//
-               // dd($query->get()[4]->averageRating());
-
-               
-
-
+               // dd($query->get()[4]->averageRating());   
+                
+                
             }
                 
         }
@@ -55,6 +53,11 @@ class items extends Model
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function ratings(): HasMany
+    {        
+        return $this->hasMany(Rating::class);
     }
 
     

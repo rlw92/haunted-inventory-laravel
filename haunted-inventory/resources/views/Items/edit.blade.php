@@ -1,5 +1,9 @@
 <x-layout>
-<div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+<div class="row-start-1 col-span-6 row-span-3 
+    flex flex-col gap-6 p-6 
+    lg:col-span-6 lg:row-start-1 lg:row-span-3 lg:items-center border-b-2 border-orange-900">
+<x-tailwindHeader></x-tailwindHeader>
+    <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
     Edit your Post!
         <form method="POST" action="/items/{{$items->id}}">
             @csrf
@@ -17,4 +21,5 @@
             </div>
         </form>
     </div>
+</div>
 </x-layout>

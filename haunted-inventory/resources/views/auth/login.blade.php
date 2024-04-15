@@ -1,10 +1,11 @@
 <x-layout>
-    <x-tailwindHeader></x-tailwindHeader>
-    <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
+<div class="row-start-1 col-span-6 row-span-3 
+    flex flex-col gap-6 p-6 
+    lg:col-span-6 lg:row-start-1 lg:row-span-3 lg:items-center border-b-2 border-orange-900">
+<x-tailwindHeader></x-tailwindHeader>
 
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
-<div class="w-full sm:max-w-md mt-6 px-6 py-4 shadow-md overflow-hidden sm:rounded-lg">
+    <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
 <p class="my-8">Login to post your haunted items!</p>
 
     <form method="POST" action="{{ route('login') }}">
@@ -49,4 +50,6 @@
             </x-primary-button>
         </div>
     </form>
+</div>
+</div>
 </x-layout>

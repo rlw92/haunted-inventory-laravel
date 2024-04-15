@@ -15,5 +15,9 @@ class Rating extends Model
         'stars'
     ];
 
+    public function itemAverageRating(){
+
+    }
+
 
 }
