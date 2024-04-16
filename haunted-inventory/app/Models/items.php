@@ -6,6 +6,7 @@ use App\Models\Rating;
 use App\Events\itemCreated;
 use App\Notifications\Newitem;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 

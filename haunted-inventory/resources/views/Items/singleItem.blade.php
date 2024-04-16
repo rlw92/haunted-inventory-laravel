@@ -22,7 +22,7 @@ alt=""
 <x-comment-form :items="$items"/>
 @endauth
 <h3 class="text-center">Comment Section</h3>
-@foreach($comments as $comment)
+@foreach($items->comments as $comment)
 <div class="border-4 border-red-900">
     <p>{{$comment->message}}</p>
     <p>By User Id:{{$comment->user_id}}</p>
