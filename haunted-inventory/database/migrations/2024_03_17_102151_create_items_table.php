@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('message');
             $table->timestamps();
             $table->string("logo")->nullable();
+            $table->integer("average_rating")->nullable();
         });
     }
 

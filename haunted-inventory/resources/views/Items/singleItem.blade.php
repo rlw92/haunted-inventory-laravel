@@ -88,7 +88,7 @@ alt=""
 </div>
 @else
 <p class="text-center">You have already rated this story</p>
-<x-userRating :rating="$userRating"/>
+<x-userRating :rating="$items->ratings->avg->stars"/>
 @endif
 @endauth
 
