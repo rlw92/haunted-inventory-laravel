@@ -16,7 +16,7 @@ src="{{$items->logo ? asset('storage/' . $items->logo) : asset('/images/no-image
 alt=""
 />
 </div>
-<x-average-star-rating :rating="$rating"/>
+<x-average-star-rating :rating="$items->averageRating()"/>
 
 @auth
 <x-comment-form :items="$items"/>
@@ -88,7 +88,7 @@ alt=""
 </div>
 @else
 <p class="text-center">You have already rated this story</p>
-<x-userRating :rating="$items->ratings->avg->stars"/>
+<x-userRating :rating="$userRating"/>
 @endif
 @endauth
 

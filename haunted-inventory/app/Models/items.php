@@ -37,8 +37,8 @@ class items extends Model
             if(request('filters')=='highestRated'){
                 //Below shows how to dig into individual items//
                // dd($query->get()[4]->averageRating());  
-               dd($query->orWhereRelation('user','name', 'like', '%' . request('search') . '%')->toSql()); 
-                
+              // dd($query->orWhereRelation('user','name', 'like', '%' . request('search') . '%')->toSql()); 
+              $query->reorder('average_rating','desc'); 
                 
             }
                 

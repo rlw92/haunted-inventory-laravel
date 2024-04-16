@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\items;
 use App\Models\Rating;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
 
 class RatingController extends Controller
@@ -40,7 +41,15 @@ class RatingController extends Controller
         $validated['items_id'] = $items->id;
         $validated['stars'] = $request->stars;
 
+
+
         Rating::create($validated);
+
+        $currentAverage = $items->averageRating();
+        //dd($currentAverage);
+
+        //Updating the average rating on the items table
+        DB::table('items')->where('id', $items->id)->update(['average_rating' => $currentAverage]);
 
         return redirect()->back();
         //
