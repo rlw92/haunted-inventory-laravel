@@ -11,6 +11,6 @@
   <a class="hover:text-green-900 "href="/?filters=Latest" >Latest</a>
   <a class="hover:text-green-900 "href="/?filters=oldest" >Oldest</a>
   <a class="hover:text-green-900 text-sm text-center"href="/?filters=highestRated" >Highest Rated</a>
-  <a class="hover:text-green-900 text-sm text-center"href="/?filters=lowestRated" >Most Rated</a>
+  <a class="hover:text-green-900 text-sm text-center"href="/?filters=mostRated" >Most Rated</a>
   </div>
 </div>

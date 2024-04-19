@@ -52,9 +52,15 @@
         
           
 </x-tailwindLeftbar>
+        
 
 
-    @if(isset($home))
+    
+
+{{$slot}}
+<x-tailwindRightbar/>
+        </div>
+        @if(isset($home))
     @php
     $hi = "Yes";
     @endphp
@@ -63,10 +69,7 @@
 <x-tailwindbottomBar/>
 @endif
 
-
-{{$slot}}
-<x-tailwindRightbar/>
-        </div>
         
+
 </body>
 </html>

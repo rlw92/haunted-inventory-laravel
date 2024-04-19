@@ -23,6 +23,7 @@ document.getElementById("srchClose").addEventListener("click",function(){srchbr.
 let drpcnt = document.getElementById("dpdCnt");
 document.getElementById('dpdBtn').addEventListener('click', dpdDown)
 let ShwDrpdwn = 1;
+
 function dpdDown(){  
 if(ShwDrpdwn === 1){
 
@@ -34,6 +35,28 @@ else if(ShwDrpdwn === 2){
   
     drpcnt.style.display = "none";
     ShwDrpdwn=1;
+}
+}
+
+/* Mobile Drop down functionality */
+
+let drpMcnt = document.getElementById("myModal");
+document.getElementById('dpdmBtn').addEventListener('click', dpdmDown)
+document.getElementById('xBtn').addEventListener('click', dpdmDown)
+let ShwMDrpdwn = 1;
+
+function dpdmDown(){  
+if(ShwMDrpdwn === 1){
+
+  drpMcnt.style.display = "flex";
+  document.getElementById("header").scrollIntoView();
+ ShwMDrpdwn=2;
+}
+
+else if(ShwMDrpdwn === 2){
+  
+    drpMcnt.style.display = "none";
+    ShwMDrpdwn=1;
 }
 }
 
