@@ -7,11 +7,12 @@
      alt="Cinque Terre" 
      class="w-full h-auto">
   </a>
-  <div class="">By {{ $chirp->user->name }}</div>
-  <div class="">{{ substr($chirp->message,0,30) }}
-    <a class="hover:text-green-900" href="/items/{{$chirp['id']}}">... Read More</a>
+  <div class="self-start text-base border-b-4 border-red-900">By {{ $chirp->user->name }}</div>
+  <div class="self-start text-base border-b-4 border-red-900">{{ $chirp->created_at->format('j M Y, g:i a') }}</div>
+  <div class="text-xl">{{ substr($chirp->message,0,30) }}...</div>
+    <div class="text-base"><a class="hover:text-green-900" href="/items/{{$chirp['id']}}"> Read More</a>
   </div>
-  <div>{{ $chirp->created_at->format('j M Y, g:i a') }}</div>
+  
   <div class="">
   <x-average-star-rating :rating="$chirp->averageRating()"/>
   </div>

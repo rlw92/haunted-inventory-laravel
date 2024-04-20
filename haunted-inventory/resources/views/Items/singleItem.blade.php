@@ -1,32 +1,38 @@
 <x-layout>
 
 <div class="row-start-1 col-span-6 row-span-3 
-    flex flex-col gap-6 p-6 
-    lg:col-span-6 lg:row-start-1 lg:row-span-3 lg:items-center border-b-2 border-orange-900">
+    flex flex-col gap-8 p-6 
+    lg:col-span-6 lg:row-start-1 lg:row-span-3 
+    lg:items-center border-b-2 border-orange-900
+    ">
 <x-tailwindHeader></x-tailwindHeader>
 
 
-<div class="flex items-center flex-col border-2 border-indigo-600 p-2">
-<p>{{$items->title}}</p>
-<p>{{$items->message}}</p>
-<p>{{ $items->user->name }}</p>
-<img
-class="w-48 mr-6 mb-6"
+<div class="flex items-center flex-col gap-2 p-2">
+<p class="text-2xl">{{$items->title}}</p>
+<img 
 src="{{$items->logo ? asset('storage/' . $items->logo) : asset('/images/no-image.jpg')}}"
-alt=""
+alt="Users Uploaded related image"
 />
+<p class="self-start text-base border-b-4 border-red-900">By {{ $items->user->name }}</p>
+<p class="self-start text-base border-b-4 border-red-900"> {{ $items->created_at }}</p>
+
+<p class="text-xl">{{$items->message}}</p>
+
+
 </div>
 <x-average-star-rating :rating="$items->averageRating()"/>
 
 @auth
 <x-comment-form :items="$items"/>
 @endauth
-<h3 class="text-center">Comment Section</h3>
+<h3 class="text-center text-base border-b-4 border-red-900">Comment Section</h3>
+<div class="flex flex-row gap-4 p-4">
 @foreach($items->comments as $comment)
-<div class="border-4 border-red-900">
+<div class="border-4 border-red-900 p-4">
     <p>{{$comment->message}}</p>
-    <p>By User Id:{{$comment->user_id}}</p>
-    <p>Created at {{$comment->created_at}}</p>
+    <p class="text-sm">By {{$comment->user->name}}</p>
+    <p class="text-sm">Created at {{$comment->created_at}}</p>
 
     @auth
     @if($comment->user_id === auth()->user()->id)
@@ -37,6 +43,7 @@ alt=""
     @endauth                                    
               </form>
     @endif
+</div>
 
 </div>
 @endforeach

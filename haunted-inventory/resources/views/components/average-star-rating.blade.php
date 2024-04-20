@@ -1,5 +1,6 @@
-<div class="flex items-center space-x-4">
-  <h3>Average Star Rating: </h3>
+<div class="flex flex-col items-center space-x-4">
+  <h3 class="text-base">Average Star Rating </h3>
+  <div>
   @if($rating=="1")
   <span class="fa fa-star checked"></span>
 <span class="fa fa-star"></span>
@@ -36,4 +37,5 @@
   @else
   <p>Not yet rated</p>
   @endif
+</div>
 </div>
