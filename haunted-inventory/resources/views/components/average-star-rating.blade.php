@@ -38,12 +38,18 @@
   @else
   <p>Not yet rated</p>
   @endif
-  ({{$chirp->amount_of_ratings}} <span class="text-sm">
+
+  @if($chirp->amount_of_ratings)
+  <span>({{$chirp->amount_of_ratings}}
+  <span class="text-sm">
     @if($chirp->amount_of_ratings > 1)
     Ratings
-    @else 
+    @elseif($chirp->amount_of_ratings === 1)
     Rating
+    @else
+     
     @endif
-  </span>)
+  </span>)</span>
+  @endif
 </div>
 </div>

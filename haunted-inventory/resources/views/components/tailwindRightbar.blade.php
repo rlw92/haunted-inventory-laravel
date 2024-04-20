@@ -5,36 +5,38 @@
             <div class="sticky top-0 flex flex-col items-center gap-6">
             @auth
  
- <x-dropdown align="right" width="48">
-                     <x-slot name="trigger">
-                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-xl hover:text-green-700 focus:outline-none transition ease-in-out duration-150">
-                             <div>{{ Auth::user()->name }}</div>
- 
-                             <div class="ms-1">
-                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                 </svg>
-                             </div>
-                         </button>
-                     </x-slot>
- 
-                     <x-slot name="content">
-                         <x-dropdown-link :href="route('profile.edit')">
-                             {{ __('Profile') }}
-                         </x-dropdown-link>
- 
-                         <!-- Authentication -->
-                         <form method="POST" action="{{ route('logout') }}">
+            <div class="text-xl">
+    <a class="hover:text-green-900 cursor-pointer" href="/userProfile/{{Auth::user()->id}}">
+{{ Auth::user()->name }}
+</a>
+    </div>
+
+
+                 <!-- Favourites icon when implemented
+                 <div>
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 cursor-pointer hover:text-green-900">
+  <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+</svg>
+         </div>
+
+-->
+<div class="text-sm">
+    <a class="hover:text-green-900 cursor-pointer" href="{{route('profile.edit')}}">Edit Profile
+</a>
+    </div>
+
+
+<div class="text-sm">
+<form method="POST" action="{{ route('logout') }}">
                              @csrf
  
-                             <x-dropdown-link :href="route('logout')"
+                             <a class="hover:text-green-900 cursor-pointer" :href="route('logout')"
                                      onclick="event.preventDefault();
                                                  this.closest('form').submit();">
-                                 {{ __('Log Out') }}
-                             </x-dropdown-link>
+                                Log Out
+</a>
                          </form>
-                     </x-slot>
-                 </x-dropdown>
+    </div>
          
  @else
      <a href="/login" class="hover:bg-red-700">Login</a>
