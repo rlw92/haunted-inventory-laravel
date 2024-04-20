@@ -19,8 +19,11 @@ return new class extends Migration
             $table->timestamps();
             $table->string("logo")->nullable();
             $table->integer("average_rating")->nullable();
+            $table->integer("amount_of_ratings")->nullable();
         });
     }
+
+    
 
     /**
      * Reverse the migrations.
@@ -29,4 +32,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('items');
     }
+    
 };

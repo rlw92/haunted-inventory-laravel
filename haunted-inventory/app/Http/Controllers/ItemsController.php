@@ -75,6 +75,8 @@ class ItemsController extends Controller
      */
     public function show(items $items)
     {
+        //amount of ratings
+        
         //dd(auth()->user());
         //average star rating    
         $avgStar = round(Rating::where('items_id', $items->id)->avg('stars'));

@@ -66,6 +66,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//get individual user profile page
+Route::get('/userProfile/{User}', [ProfileController::class, 'show']);
+
 /*
 Route::resource('items', ItemsController::class)
     ->only(['create', 'store'])

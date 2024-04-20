@@ -41,6 +41,13 @@ class items extends Model
               $query->reorder('average_rating','desc'); 
                 
             }
+            if(request('filters')=='mostRated'){
+                //Below shows how to dig into individual items//
+               // dd($query->get()[4]->averageRating());  
+              // dd($query->orWhereRelation('user','name', 'like', '%' . request('search') . '%')->toSql()); 
+              $query->reorder('amount_of_ratings','desc'); 
+                
+            }
                 
         }
     }
@@ -57,6 +64,13 @@ class items extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function amountofComments()
+    {
+        return Comment::where('items_id', $this->id)->count();
+    }
+
+
+
     public function ratings(): HasMany
     {        
         return $this->hasMany(Rating::class);
@@ -69,12 +83,18 @@ class items extends Model
        
     }
 
+    public function amountofRatings()
+    {
+        return Rating::where('items_id', $this->id)->count();
+    }
+
 
 
     protected $fillable = [
         'title',
         'message',
         'logo',
-        'average_rating'
+        'average_rating',
+        'amount_of_ratings'
     ];
 }

@@ -47,9 +47,12 @@ class RatingController extends Controller
 
         $currentAverage = $items->averageRating();
         //dd($currentAverage);
+        $ratingsCount = $items->amountofRatings();
 
         //Updating the average rating on the items table
         DB::table('items')->where('id', $items->id)->update(['average_rating' => $currentAverage]);
+        DB::table('items')->where('id', $items->id)->update(['amount_of_ratings' => $ratingsCount]);
+
 
         return redirect()->back();
         //

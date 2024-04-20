@@ -10,7 +10,7 @@
 
 <div class="flex items-center flex-col gap-2 p-2">
 <p class="text-2xl">{{$items->title}}</p>
-<img 
+<img
 src="{{$items->logo ? asset('storage/' . $items->logo) : asset('/images/no-image.jpg')}}"
 alt="Users Uploaded related image"
 />
@@ -18,16 +18,17 @@ alt="Users Uploaded related image"
 <p class="self-start text-base border-b-4 border-red-900"> {{ $items->created_at }}</p>
 
 <p class="text-xl">{{$items->message}}</p>
-
-
 </div>
-<x-average-star-rating :rating="$items->averageRating()"/>
+
+<x-average-star-rating :chirp="$items" :rating="$items->averageRating()"/>
 
 @auth
 <x-comment-form :items="$items"/>
 @endauth
-<h3 class="text-center text-base border-b-4 border-red-900">Comment Section</h3>
-<div class="flex flex-row gap-4 p-4">
+<h3 class="text-center text-base border-b-4 border-red-900">Comment Section
+ ( {{$items->amountofComments()}} <span class="text-sm">Comments</span>)
+</h3>
+
 @foreach($items->comments as $comment)
 <div class="border-4 border-red-900 p-4">
     <p>{{$comment->message}}</p>
@@ -43,7 +44,7 @@ alt="Users Uploaded related image"
     @endauth                                    
               </form>
     @endif
-</div>
+
 
 </div>
 @endforeach

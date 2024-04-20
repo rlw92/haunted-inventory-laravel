@@ -59,6 +59,7 @@
 
 {{$slot}}
 <x-tailwindRightbar/>
+<div class="p-6"></div>
         </div>
         @if(isset($home))
     @php
