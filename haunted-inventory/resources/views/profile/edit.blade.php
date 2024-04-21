@@ -1,9 +1,8 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile') }}
-        </h2>
-    </x-slot>
+<x-layout>
+<div class="row-start-1 col-span-6 row-span-3 
+    flex flex-col gap-6 p-6 lg:col-span-4 lg:row-start-1 lg:row-span-3">
+    
+    <x-tailwindHeader/>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
@@ -26,4 +25,5 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</div>
+</x-layout>
