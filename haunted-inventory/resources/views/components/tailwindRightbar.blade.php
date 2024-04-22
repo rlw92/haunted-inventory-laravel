@@ -5,9 +5,17 @@
             <div class="sticky top-0 flex flex-col items-center gap-6">
             @auth
  
-            <div class="text-xl">
+            <div class="text-base flex flex-col gap-2 items-center">
     <a class="hover:text-green-900 cursor-pointer" href="/userProfile/{{Auth::user()->id}}">
 {{ Auth::user()->name }}
+</a>
+
+<a class="cursor-pointer" href="/userProfile/{{Auth::user()->id}}">
+
+<img class="rounded-full w-10"
+src="{{Auth::user()->profilePic ? asset('storage/' . Auth::user()->profilePic) : asset('/images/no-image.jpg')}}"
+alt="User profile image"
+/>
 </a>
     </div>
 

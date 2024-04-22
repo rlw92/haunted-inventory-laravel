@@ -6,6 +6,24 @@
     ">
     <x-tailwindHeader/>
 
+    @if(Auth::user()->id === $user->id)
+    <div class="self-end hover:text-green-900">
+    <a href="{{route('profile.edit')}}">Edit Profile</a>
+</div>
+    <div class="self-end hover:text-green-900">
+<form method="POST" action="{{ route('logout') }}">
+@csrf
+
+<a class="hover:text-green-900 cursor-pointer" :href="route('logout')"
+        onclick="event.preventDefault();
+                    this.closest('form').submit();">
+Log Out
+</a>
+                         </form>
+    </div>
+    @endif
+
+
 
     <div class="text-center">
         {{$user->name}}
