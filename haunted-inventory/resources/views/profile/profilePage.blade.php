@@ -5,7 +5,7 @@
     lg:items-center border-b-2 border-orange-900
     ">
     <x-tailwindHeader/>
-
+@auth
     @if(Auth::user()->id === $user->id)
     <div class="self-end hover:text-green-900">
     <a href="{{route('profile.edit')}}">Edit Profile</a>
@@ -22,7 +22,7 @@ Log Out
                          </form>
     </div>
     @endif
-
+@endauth
 
 
     <div class="text-center">
