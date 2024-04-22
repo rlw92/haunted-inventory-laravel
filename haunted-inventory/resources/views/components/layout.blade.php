@@ -23,6 +23,8 @@
 </head>
 <body class="p-0 pb-5">
 
+<x-tailwindSidemenu/>
+
 <div class="grid grid-rows-3 grid-cols-6 gap-0 w-full">
 
 

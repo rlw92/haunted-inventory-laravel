@@ -14,6 +14,20 @@ body {
   
   }
 
+  #sideMenu{
+    width:0;
+    padding-top:40px;
+    transition:2s;
+    overflow-x:hidden;
+    
+  }
+
+  #sideMenu a{
+  padding:8px 8px 8px 32px;
+  display:block;
+
+  }
+
   
 
 
