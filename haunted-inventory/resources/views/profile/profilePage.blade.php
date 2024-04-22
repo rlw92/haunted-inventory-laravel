@@ -7,7 +7,25 @@
     <x-tailwindHeader/>
 
 
-    {{$user->name}}
+    <div class="text-center">
+        {{$user->name}}
+
+    </div>
+
+    <div class="self-center lg:self-stretch lg:gap-2 lg:flex ">
+
+<div class="">
+<img class="rounded-full max-w-96"
+src="{{$user->profilePic ? asset('storage/' . $user->profilePic) : asset('/images/no-image.jpg')}}"
+alt="User profile image"
+/>
+</div>
+
+<div class="">
+   <div class="text-center border-b-2 border-red-900"> About </div>
+   {{$user->about}}</div>
+</div>
+    
 <div class="self-start">
     Posts by {{$user->name}}:
 </div>

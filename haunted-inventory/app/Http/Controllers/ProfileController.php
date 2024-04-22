@@ -43,6 +43,11 @@ class ProfileController extends Controller
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
+
+        /*Profile pic image */
+       if($request->hasFile('profilePic')) {
+            $request->user()->profilePic = $request->file('profilePic')->store('profile_pics', 'public');
+            };
         
         
 

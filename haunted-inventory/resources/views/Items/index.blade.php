@@ -32,7 +32,7 @@
                                 class="text-red-900 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                                 name="logo"
                             />
-                            <x-input-error :messages="$errors->get('message')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('logo')" class="mt-2" />
                         </div>
                         <x-primary-button class="mt-4">Post Item</x-primary-button>
         </form>

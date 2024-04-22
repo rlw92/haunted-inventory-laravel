@@ -21,7 +21,7 @@
         </script>
         <title>Haunted Inventory</title>
 </head>
-<body class="p-0">
+<body class="p-0 pb-5">
 
 <div class="grid grid-rows-3 grid-cols-6 gap-0 w-full">
 
@@ -50,7 +50,10 @@
 <x-tailwindbottomBar :home="$hi"/>
 @else
 <x-tailwindbottomBar/>
+
 @endif
+
+
 
         
 

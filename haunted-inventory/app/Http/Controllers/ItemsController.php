@@ -50,7 +50,7 @@ class ItemsController extends Controller
        
         $validated = $request->validate([
             'title'=> 'required|string|max:30',
-            'message' => 'required|string|max:255',
+            'message' => 'required|string|min:10',
             
         ]);
 
