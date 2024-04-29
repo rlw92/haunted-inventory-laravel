@@ -37,7 +37,7 @@ class ItemsController extends Controller
     public function create(): View
     {
         //
-        return view('items.index');
+        return view('Items.index');
     }
 
     /**
@@ -92,10 +92,10 @@ class ItemsController extends Controller
 
         
                
-        return view('items.singleItem',['userRating'=>$userRating, 'items'=> $items,  'rating'=> $avgStar, "showform" => $ratingmatch]);
+        return view('Items.singleItem',['userRating'=>$userRating, 'items'=> $items,  'rating'=> $avgStar, "showform" => $ratingmatch]);
         }
 
-        return view('items.singleItem',[ 'items'=> $items,  'rating'=> $avgStar, "showform" => false ]);
+        return view('Items.singleItem',[ 'items'=> $items,  'rating'=> $avgStar, "showform" => false ]);
 
         //
     }
@@ -106,7 +106,7 @@ class ItemsController extends Controller
     public function edit(items $items)
     {
         //
-        return view("items.edit", ['items' => $items]);
+        return view("Items.edit", ['items' => $items]);
     }
 
     /**
