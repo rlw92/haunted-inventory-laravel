@@ -1,5 +1,11 @@
 # haunted-inventory-laravel
 
+
+Deployed application:
+https://haunted-inventory-laravel.onrender.com
+
+Goals:
+
 A Multi Page Crud application that allows users to post photographs of haunted objects and a short story to go with it.
 An excercise in creative writing and a project that will allow me to develop my laravel skills.
 
