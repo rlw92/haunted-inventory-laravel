@@ -8,8 +8,8 @@ php artisan migrate --force
 #echo "Running seeders..."
 #php artisan db:seed
 
-echo "running image link"
-php artisan storage:link
+# echo "running image link"
+# php artisan storage:link
 
 echo "Artisant key"
 php artisan key:generate --show
