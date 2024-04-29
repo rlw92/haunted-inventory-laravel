@@ -24,7 +24,7 @@ class ItemsController extends Controller
         
         return view('home', [
            
-           'items' => Items::latest()->filter(request(['search','filters']))->paginate(3)->withQueryString(),
+           'items' => items::latest()->filter(request(['search','filters']))->paginate(3)->withQueryString(),
            
            
 
@@ -120,8 +120,13 @@ class ItemsController extends Controller
        // Gate::authorize('update', $items);
  
         $validated = $request->validate([
+            'title' => 'required|string|max:20',
             'message' => 'required|string|max:255',
         ]);
+
+        if($request->hasFile('logo')) {
+            $validated['logo'] = $request->file('logo')->store('logos', 'public');
+            };
  
         $items->update($validated);
  

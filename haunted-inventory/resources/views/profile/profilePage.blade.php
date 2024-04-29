@@ -8,8 +8,16 @@
 
     <div class="text-center">
         {{$user->name}}
+        
 
     </div>
+
+    <div class="text-center">
+        {{$user->email}}
+        
+
+    </div>
+
 
     <div class="self-center lg:self-stretch lg:gap-2 lg:flex ">
 
@@ -20,10 +28,15 @@ alt="User profile image"
 />
 </div>
 
-<div class="">
+<div class="min-w-0">
    <div class="text-center border-b-2 border-red-900"> About </div>
-   {{$user->about}}</div>
+ <p class="min-w-0">{{$user->about}}</p>
 </div>
+
+   
+   
+</div>
+
     
 <div class="self-start">
     Posts by {{$user->name}}:

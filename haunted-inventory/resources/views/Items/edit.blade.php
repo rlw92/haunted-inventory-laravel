@@ -5,16 +5,37 @@
 <x-tailwindHeader></x-tailwindHeader>
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
     Edit your Post!
-        <form method="POST" action="/items/{{$items->id}}">
+        <form method="POST" action="/items/{{$items->id}}" enctype="multipart/form-data" class="flex flex-col 
+        gap-4">
             @csrf
             @method('PUT')
 
-            <!-- Name -->
+            <div>
+            <x-input-label class="text-green-800 font-bold" for="title" :value="__('Title')" />
+            <x-text-input id="name" class="block mt-1 w-full text-red-900" type="text" name="title" :value="old('title', $items->title)" required autofocus autocomplete="name" />
+            <x-input-error :messages="$errors->get('title')" class="mt-2" />
+        </div>
+
+            <!-- message -->
+            <div>
                     <textarea
                 name="message"
                 class="text-red-900 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
             >{{ old('message', $items->message) }}</textarea>
             <x-input-error :messages="$errors->get('message')" class="mt-2" />
+</div>
+
+            <div>
+    <x-input-label for="logo" :value="__('logo')" />
+    <input
+                        type="file"
+                        class="text-red-900 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                        name="logo"
+                    />
+    <x-input-error class="mt-2" :messages="$errors->get('logo')" />
+</div>
+
+
             <div class="mt-4 space-x-2">
                 <x-primary-button>{{ __('Save') }}</x-primary-button>
                 <a href="/">{{ __('Cancel') }}</a>
