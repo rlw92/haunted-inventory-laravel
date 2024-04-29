@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\items;
+use App\Models\Items;
 use App\Models\Rating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -29,7 +29,7 @@ class RatingController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, items $items): RedirectResponse
+    public function store(Request $request, Items $items): RedirectResponse
        {
 
         if(Rating::where('items_id', $items->id)->where("user_id", auth()->user()->id)->count()>0){

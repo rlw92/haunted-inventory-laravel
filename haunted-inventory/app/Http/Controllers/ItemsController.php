@@ -24,7 +24,7 @@ class ItemsController extends Controller
         
         return view('home', [
            
-           'items' => items::latest()->filter(request(['search','filters']))->paginate(3)->withQueryString(),
+           'items' => Items::latest()->filter(request(['search','filters']))->paginate(3)->withQueryString(),
            
            
 

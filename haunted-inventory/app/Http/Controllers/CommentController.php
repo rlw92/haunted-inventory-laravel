@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\items;
+use App\Models\Items;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -28,7 +28,7 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, items $items): RedirectResponse
+    public function store(Request $request, Items $items): RedirectResponse
     {
 
         //shows user id of post = dd($request->user()->id);
@@ -74,7 +74,7 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(items $items,Comment $comment): RedirectResponse
+    public function destroy(Items $items,Comment $comment): RedirectResponse
     {
         if($comment->user_id != auth()->id()) {
             abort(403, 'Unauthorized Action');
