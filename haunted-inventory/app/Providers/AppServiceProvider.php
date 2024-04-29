@@ -2,9 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\items;
-use App\Policies\itemsPolicy;
-use Illuminate\Support\Facades\Gate;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,9 +18,10 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot(UrlGenerator $url): void
     {
-       // Gate::policy(items::class, itemsPolicy::class);
-        //
+        if (env('APP_ENV') == 'production') {
+            $url->forceScheme('https');
+        }
     }
 }
