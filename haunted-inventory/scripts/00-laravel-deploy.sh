@@ -8,6 +8,9 @@ php artisan migrate --force
 #echo "Running seeders..."
 #php artisan db:seed
 
-#echo "Running vite..."
+echo "Artisant key"
+php artisan key:generate --show
+
+echo "Running vite..."
 npm install
 npm run build

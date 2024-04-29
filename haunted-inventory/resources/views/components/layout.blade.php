@@ -32,9 +32,9 @@
     @php
     $hi = "Yes";
     @endphp
-<x-tailwindLeftBar :home="$hi"/>
+<x-tailwindLeftbar :home="$hi"/>
 @else
-<x-tailwindLeftBar/>
+<x-tailwindLeftbar/>
 @endif
 
         
