@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\items;
+use App\Models\Items;
 use App\Models\Rating;
 use App\Models\Comment;
 use Illuminate\View\View;
@@ -73,7 +73,7 @@ class ItemsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(items $items)
+    public function show(Items $items)
     {
         //amount of ratings
         
@@ -103,7 +103,7 @@ class ItemsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(items $items)
+    public function edit(Items $items)
     {
         //
         return view("Items.edit", ['items' => $items]);
@@ -112,7 +112,7 @@ class ItemsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, items $items): RedirectResponse
+    public function update(Request $request, Items $items): RedirectResponse
     {
         //has to own the post to edit it
         if($items->user_id != auth()->id()) {abort(403, 'Unauthorized Action');}
@@ -131,7 +131,7 @@ class ItemsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(items $items)
+    public function destroy(Items $items)
     {
         if($items->user_id != auth()->id()) {
             abort(403, 'Unauthorized Action');
