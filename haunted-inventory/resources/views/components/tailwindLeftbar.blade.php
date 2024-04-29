@@ -19,7 +19,7 @@ Add Post
               Search
               </div>
              
-              <x-tailwindFilter/>
+              <x-tailwindFIlter/>
           
           @endif     
         
