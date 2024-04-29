@@ -36,7 +36,7 @@ alt="Users Uploaded related image"
 @foreach($items->comments as $comment)
 <div class="border-4 border-red-900 p-4">
     <p>{{$comment->message}}</p>
-    <p class="text-sm">By {{$comment->user->name}}</p>
+    <p class="text-sm">By <a class="hover:text-green-900" href="/userProfile/{{$comment->user->id}}">{{$comment->user->name}}</a></p>
     <p class="text-sm">Created at {{$comment->created_at}}</p>
 
     @auth
