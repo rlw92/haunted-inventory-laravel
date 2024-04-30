@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('items', function (Blueprint $table) {
             //
 
-            $table->string('secondSentence');
+            $table->string('secondSentence')->nullable();
 
 
         });
