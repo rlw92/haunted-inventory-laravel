@@ -93,6 +93,7 @@ class Items extends Model
     protected $fillable = [
         'title',
         'message',
+        'secondSentence',
         'logo',
         'average_rating',
         'amount_of_ratings'

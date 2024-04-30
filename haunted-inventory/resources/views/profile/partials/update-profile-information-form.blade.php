@@ -49,10 +49,14 @@
 
         <div>
             <x-input-label for="about" :value="__('About')" />
-            <x-text-input id="about" name="about" type="text" class="mt-1 block w-full text-green-900" :value="old('name', $user->about)" required autofocus autocomplete="name" />
+            <textarea
+                name="about"
+                class="text-red-900 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+            >{{old('name', $user->about)}}</textarea>
             <x-input-error class="mt-2" :messages="$errors->get('about')" />
         </div>
 
+        <!-- not needed for speedscare
         <div>
     <x-input-label for="profilePic" :value="__('Profile Pic')" />
     <input
@@ -62,6 +66,7 @@
                     />
     <x-input-error class="mt-2" :messages="$errors->get('profilePic')" />
 </div>
+-->
 
 
         <div class="flex items-center gap-4">

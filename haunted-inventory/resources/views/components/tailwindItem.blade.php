@@ -1,24 +1,35 @@
 
 <div class=" flex flex-col items-center border-b-2 
-            border-orange-900">
-    <h3 class="text-center"><a class="hover:text-green-900" href="/items/{{$chirp['id']}}">{{ $chirp->title }}</a></h3>
-  <a href="/items/{{$chirp['id']}}">
+            border-orange-900 gap-2">
+    <h3 class="text-center text-2xl border-b-2 border-red-900"><a class="hover:text-green-900" href="/items/{{$chirp['id']}}">{{ $chirp->title }}</a></h3>
+    <!--<div class="text-xl">{{ substr($chirp->message,0,30) }}...</div>-->
+    <div class="text-xl">{{ $chirp->message }}</div>
+    <div class="text-base"><a class="hover:text-green-900" href="/items/{{$chirp['id']}}"> Go to Second Sentence</a>
+  </div>
+ 
+    <!-- Not needed for speedscare
+
+    <a href="/items/{{$chirp['id']}}">
     <img src="{{$chirp->logo ? asset('storage/' . $chirp->logo) : asset('/images/no-image.jpg')}}"
      alt="Cinque Terre" 
      class="w-full h-auto">
   </a>
+
+-->
   <div class="self-start text-base border-b-4 border-red-900">
     By <a class="hover:text-green-900" href="/userProfile/{{$chirp->user->id}}">{{ $chirp->user->name }}</a>
   </div>
   <div class="self-start text-base border-b-4 border-red-900">{{ $chirp->created_at->format('j M Y, g:i a') }}</div>
-  <div class="text-xl">{{ substr($chirp->message,0,30) }}...</div>
-    <div class="text-base"><a class="hover:text-green-900" href="/items/{{$chirp['id']}}"> Read More</a>
-  </div>
-  
+    
   <div class="">
   <x-average-star-rating :chirp="$chirp" :rating="$chirp->averageRating()" />
- 
+  </div>
 
+  <div class="flex">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+</svg>
+<span class="text-base">({{$chirp->amountofComments()}} Comments)</span>
   </div>
 
   @if ($chirp->user->is(auth()->user()))

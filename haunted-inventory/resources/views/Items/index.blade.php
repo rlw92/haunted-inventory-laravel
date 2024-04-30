@@ -4,7 +4,7 @@
     lg:col-span-6 lg:row-start-1 lg:row-span-3 lg:items-center border-b-2 border-orange-900">
 <x-tailwindHeader></x-tailwindHeader>
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-        Post the story of your haunted item!
+        Post your two sentence horror story!
         <form method="POST" action="/items" enctype="multipart/form-data">
             @csrf
             <!-- title -->
@@ -14,19 +14,33 @@
             <x-input-error :messages="$errors->get('title')" class="mt-2" />
         </div>
 
-    <div>
-        <!-- Story -->
+    
+        <!-- first sentence -->
+        <div>
     <x-input-label class="text-green-800 font-bold" for="name" :value="__('Story')" />
             <textarea 
                 name="message"
-                placeholder="{{ __('What is the story of your item?') }}"
+                placeholder="{{ __('What is the first sentence?') }}"
                 class="text-red-900 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
             >{{ old('message') }}</textarea>
             <x-input-error :messages="$errors->get('message')" class="mt-2" />
                     </div>
+
+                    <!-- second sentence -->
         <div>
-        <!-- Logo -->
-        <x-input-label class="text-green-800 font-bold" for="name" :value="__('Logo')" />
+    <x-input-label class="text-green-800 font-bold" for="name" :value="__('Story')" />
+            <textarea 
+                name="secondSentence"
+                placeholder="{{ __('What is the second sentence?') }}"
+                class="text-red-900 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+            >{{ old('message') }}</textarea>
+            <x-input-error :messages="$errors->get('message')" class="mt-2" />
+                    </div>
+        
+            
+        <!-- Logo not needed for speedscare
+        <div>
+               <x-input-label class="text-green-800 font-bold" for="name" :value="__('Logo')" />
                             <input
                                 type="file"
                                 class="text-red-900 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
@@ -34,6 +48,7 @@
                             />
                             <x-input-error :messages="$errors->get('logo')" class="mt-2" />
                         </div>
+-->
                         <x-primary-button class="mt-4">Post Item</x-primary-button>
         </form>
     

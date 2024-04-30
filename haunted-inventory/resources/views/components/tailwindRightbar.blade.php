@@ -10,6 +10,8 @@
 {{ Auth::user()->name }}
 </a>
 
+<!-- not needed for speedscare
+
 <a class="cursor-pointer" href="/userProfile/{{Auth::user()->id}}">
 
 <img class="rounded-full w-10"
@@ -17,6 +19,7 @@ src="{{Auth::user()->profilePic ? asset('storage/' . Auth::user()->profilePic) :
 alt="User profile image"
 />
 </a>
+-->
     </div>
 
 

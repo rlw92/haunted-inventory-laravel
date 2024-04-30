@@ -9,21 +9,24 @@
 
 
 <div class="flex items-center flex-col gap-2 p-2">
-<p class="text-2xl">{{$items->title}}</p>
+<p class="text-2xl border-b-2 border-red-900">{{$items->title}}</p>
+<!-- image not needed for speedscare
 <img
 src="{{$items->logo ? asset('storage/' . $items->logo) : asset('/images/no-image.jpg')}}"
 alt="Users Uploaded related image"
 />
+-->
+
+
+<p class="text-xl">{{$items->message}}</p>
+<p class="text-xl">{{$items->secondSentence}}</p>
+</div>
 <p class="self-start text-base border-b-4 border-red-900">
   By <a class="hover:text-green-900" href="/userProfile/{{$items->user->id}}">
     {{ $items->user->name }}
 </a>
 </p>
 <p class="self-start text-base border-b-4 border-red-900"> {{ $items->created_at }}</p>
-
-<p class="text-xl">{{$items->message}}</p>
-</div>
-
 <x-average-star-rating :chirp="$items" :rating="$items->averageRating()"/>
 
 @auth

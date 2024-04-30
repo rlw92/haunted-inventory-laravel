@@ -18,7 +18,8 @@ class itemsFactory extends Factory
     {
         return [
                'title' => $this->faker->company(),
-               'message'=> $this->faker->sentence()
+               'message'=> $this->faker->sentence(),
+               'secondSentence' => $this->faker->sentence()
             
             //
         ];

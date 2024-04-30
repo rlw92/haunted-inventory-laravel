@@ -6,27 +6,28 @@
     ">
     <x-tailwindHeader/>
 
-    <div class="text-center">
+    <div class="text-center border-b-2 border-green-900">
         {{$user->name}}
         
 
     </div>
 
-    <div class="text-center">
+    <div class="text-center border-b-2 border-green-900">
         {{$user->email}}
         
 
     </div>
 
 
-    <div class="self-center lg:self-stretch lg:gap-2 lg:flex ">
-
+    <div class="self-center lg:self-stretch lg:gap-2 lg:flex border-b-2 border-green-900">
+<!-- not needed for speedscare
 <div class="">
 <img class="rounded-full max-w-96"
 src="{{$user->profilePic ? asset('storage/' . $user->profilePic) : asset('/images/no-image.jpg')}}"
 alt="User profile image"
 />
 </div>
+-->
 
 <div class="min-w-0">
    <div class="text-center border-b-2 border-red-900"> About </div>

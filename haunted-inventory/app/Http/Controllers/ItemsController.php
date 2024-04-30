@@ -51,6 +51,7 @@ class ItemsController extends Controller
         $validated = $request->validate([
             'title'=> 'required|string|max:30',
             'message' => 'required|string|min:10',
+            'secondSentence' => 'required|string|max:400'
             
         ]);
 
@@ -121,7 +122,8 @@ class ItemsController extends Controller
  
         $validated = $request->validate([
             'title' => 'required|string|max:20',
-            'message' => 'required|string|max:255',
+            'message' => 'required|string|max:400',
+            'secondSentence' => 'required|string|max:400'
         ]);
 
         if($request->hasFile('logo')) {
