@@ -25,6 +25,18 @@
             <x-input-error :messages="$errors->get('message')" class="mt-2" />
 </div>
 
+<!-- second sentence -->
+<div>
+    <x-input-label class="text-green-800 font-bold" for="name" :value="__('Story')" />
+            <textarea 
+                name="secondSentence"
+                placeholder="{{ __('What is the second sentence?') }}"
+                class="text-red-900 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+            >{{ old('message') }}</textarea>
+            <x-input-error :messages="$errors->get('message')" class="mt-2" />
+                    </div>
+
+                    <!-- not needed for speedscare
             <div>
     <x-input-label for="logo" :value="__('logo')" />
     <input
@@ -34,6 +46,8 @@
                     />
     <x-input-error class="mt-2" :messages="$errors->get('logo')" />
 </div>
+
+-->
 
 
             <div class="mt-4 space-x-2">

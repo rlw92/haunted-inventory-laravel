@@ -1,6 +1,6 @@
 
-<div class=" flex flex-col items-center border-b-2 
-            border-orange-900 gap-2">
+<div class=" flex flex-col items-center border-b-4 
+            border-green-900 gap-2">
     <h3 class="text-center text-2xl border-b-2 border-red-900"><a class="hover:text-green-900" href="/items/{{$chirp['id']}}">{{ $chirp->title }}</a></h3>
     <!--<div class="text-xl">{{ substr($chirp->message,0,30) }}...</div>-->
     <div class="text-xl">{{ $chirp->message }}</div>
