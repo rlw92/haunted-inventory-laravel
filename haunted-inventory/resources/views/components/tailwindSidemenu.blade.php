@@ -14,6 +14,10 @@ border-l-2 border-green-900
     <a href="{{route('profile.edit')}}"
      class="text-sm hover:text-green-900">Edit Profile</a>
     
+
+
+
+     
     <div class="text-sm">
 <form method="POST" action="{{ route('logout') }}">
                              @csrf
