@@ -6,6 +6,12 @@ https://haunted-inventory-laravel.onrender.com
 
 Goals:
 
+Update:
+
+The site I am using to deploy does not have persistent disk storage. Therefore the project will be altered to a two sentence horror version of the idea, showing the star rating and the comments.
+
+- - - -  - - 
+
 A Multi Page Crud application that allows users to post photographs of haunted objects and a short story to go with it.
 An excercise in creative writing and a project that will allow me to develop my laravel skills.
 
