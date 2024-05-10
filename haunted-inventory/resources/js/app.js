@@ -6,25 +6,6 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-
-/*side Menu functionality*/
-let prflBtn = document.getElementById('prflBtn');
-let sdmnu = document.getElementById('sideMenu');
-
-prflBtn.addEventListener('click', function(){
-  sdmnu.style.width = "40vw";
-  console.log("hi");
-  
-  })
-
-let clsBtn = document.getElementById("clsBtn")
- 
-clsBtn.addEventListener('click', function(){
-  sdmnu.style.width = "0";
-  
-})
-
-
 const srchbr = document.getElementById("searchbar")
 
 /*Search bar display*/ 
@@ -78,6 +59,26 @@ else if(ShwMDrpdwn === 2){
     ShwMDrpdwn=1;
 }
 }
+
+
+
+/*side Menu functionality*/
+let prflBtn = document.getElementById('prflBtn');
+let sdmnu = document.getElementById('sideMenu');
+
+prflBtn.addEventListener('click', function(){
+  sdmnu.style.width = "40vw";
+  console.log("hi");
+  
+  })
+
+let clsBtn = document.getElementById("clsBtn")
+ 
+clsBtn.addEventListener('click', function(){
+  sdmnu.style.width = "0";
+  
+})
+
 
 
 
